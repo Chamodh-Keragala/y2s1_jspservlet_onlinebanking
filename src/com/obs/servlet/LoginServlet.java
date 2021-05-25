@@ -69,13 +69,12 @@ public class LoginServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else {
-			try {
 			CustomerModel customerModel = new CustomerModel();
 			customerModel.setAccount_number(Long.parseLong(username));
 			customerModel.setPassword(password);
 			UserController u = new UserController();
 
-			
+			try {
 				if (u.validateCustomer(customerModel)) {
 					CustomerModel um = u.getCustomerDetail(customerModel.getAccount_number());
 					request.setAttribute("cm", um);
