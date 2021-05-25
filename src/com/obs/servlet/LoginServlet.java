@@ -48,9 +48,7 @@ public class LoginServlet extends HttpServlet {
 					rd.include(request, response);
 				}
 			} catch (Exception e) {
-				request.setAttribute("error", "Login Failed Invalid username / password");
-				RequestDispatcher rd = request.getRequestDispatcher("login");
-				rd.include(request, response);
+				e.printStackTrace();
 			}
 		} else if (username.contains("emp")) {
 			EmployeeModel employeeModel = new EmployeeModel();
@@ -68,9 +66,7 @@ public class LoginServlet extends HttpServlet {
 					rd.include(request, response);
 				}
 			} catch (Exception e) {
-				request.setAttribute("error", "Login Failed Invalid username / password");
-				RequestDispatcher rd = request.getRequestDispatcher("login");
-				rd.include(request, response);
+				e.printStackTrace();
 			}
 		} else {
 			try {
@@ -90,9 +86,7 @@ public class LoginServlet extends HttpServlet {
 					rd.include(request, response);
 				}
 			} catch (Exception e) {
-				request.setAttribute("error", "Login Failed Invalid username / password");
-				RequestDispatcher rd = request.getRequestDispatcher("login");
-				rd.include(request, response);
+				e.printStackTrace();
 			}
 		}
 
